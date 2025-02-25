@@ -54,7 +54,7 @@ jobs:
 
         - name: Code-coverage
           continue-on-error: true
-          run: npm coverage
+          run: npm run coverage
         
         - name: Archive Coverage Result
           if: always()
