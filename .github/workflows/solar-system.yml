@@ -120,6 +120,9 @@ jobs:
             method: kubeconfig
             kubeconfig: ${{ secrets.KUBECONFIG }}
 
+        - name: Display K8 version
+          run: kubectl version -o yaml
+
         - name: Fetch the NGINX INGRESS CONTROLLER IP
           run: echo "INGRESS_IP=$(kubectl -n ingress-nginx get services ingress-nginx-controller -o jsonpath='{.status.loadBalancer.ingress[0].ip}')" >> $GITHUB_ENV
           
