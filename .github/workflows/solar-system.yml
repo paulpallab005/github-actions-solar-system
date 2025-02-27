@@ -141,9 +141,7 @@ jobs:
         - name: Display Manifest files with replaced tokens
           run: cat kubernetes/development/*.yaml
 
-    integration-testing:
-      name: Integration Testing
-      runs-on: ubuntu-latest
+    integration-test:
       needs: dev-deploy
       uses: ./.github/workflows/reusable-workflow.yml
       with:
