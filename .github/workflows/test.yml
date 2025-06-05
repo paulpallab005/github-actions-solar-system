@@ -16,4 +16,4 @@ jobs:
 
     - name: Print
       run: |
-          echo "Environment Name: ${{ github.event.deployment.environment }}"
+          echo "Environment Name: ${{ github.environment }}"
