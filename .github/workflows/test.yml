@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  dev:
     environment: development
     runs-on: ubuntu-latest
 
@@ -15,7 +15,8 @@ jobs:
     - name: List Environments from GitHub Settings
       run: echo ${{ vars.NAMESPACE }}
 
-  test2:
+  test:
+    needs: dev
     environment: test
     runs-on: ubuntu-latest
 
