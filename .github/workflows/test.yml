@@ -13,7 +13,9 @@ jobs:
 
     steps:
     - name: List Environments from GitHub Settings
-      run: echo ${{ vars.NAMESPACE }}
+      run: |
+        echo ${{ vars.NAMESPACE }}
+        echo ${{ github.event_name }}
 
   test:
     needs: dev
